@@ -4,32 +4,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// var dummyData = ["clean room", "call mom", "text my sister", "sleep 8 hours"]
-//
-// class Todo extends React.Component{
-//   render: function() {
-//     return (
-//       <div>
-//         <ul>
-//           {this.dummyData.map(dummyData => <li>{dummyData}</li>)}
-//         </ul>
-//       </div>
-//     );
-//   }
-// }
-//
-// class TodoList extends React.Component{
-//   render: function() {
-//     return (
-//       <div>
-//         <ul>
-//           {this.dummyData.map(dummyData => <li>{dummyData}</li>)}
-//         </ul>
-//       </div>
-//     );
-//   }
-// }
+var dummyData = ["clean room", "call mom", "text my sister", "sleep 8 hours"]
 
-ReactDOM.render(<p>Testing React</p>,
+class Todo extends React.Component{
+  render() {
+    return (
+      <li><button> X </button> {this.props.task}</li>
+    )
+  }
+}
+
+class TodoList extends React.Component{
+  render() {
+    return (
+      <div>
+        <ul>
+          {dummyData.map((item) => <Todo task ={item}/>)}
+        </ul>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<TodoList /> ,
    document.getElementById('root'));
-{/* <TodoList /> */}
